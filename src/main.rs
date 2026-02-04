@@ -21,17 +21,14 @@ fn fibonacci(n: u32) -> u32 {
     let mut f1: u32 = 0;
     let mut f2: u32;
 
-    if n == 0 {
-        f0 = 0;
-    } else if n == 1 {
-        f0 = 1;
-    } else {
-        for _i in 1..n {
-            f2 = f1;
-            f1 = f0;
-            f0 = f1 + f2;
-        }
+    if n <= 1 {
+        return n;
+    }
+    for _i in 1..n {
+        f2 = f1;
+        f1 = f0;
+        f0 = f1 + f2;
     }
 
-    f0
+    return f0;
 }
